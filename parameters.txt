@@ -1,0 +1,79 @@
+REGISTER - POST
+localhost/pilihape_api/register
+{
+	"username":"heru",
+	"phone_no":"085728451776",
+	"password":"ganteng",
+	"store_name":"re computer",
+	"store_id":"1"
+}
+
+LOGIN - POST
+localhost/pilihape_api/login
+{
+	"user_or_phone":"085728451774",
+	"password":"ganteng",
+	"store_id":"1"
+}
+
+LOGOUT - POST
+localhost/pilihape_api/logout
+
+TAMBAH DATA - POST
+localhost/pilihape_api/ponsel
+{
+    "merk_type":"Oppo A5 2020 3/64",
+    "layar_ukuran":"6.5",
+    "layar_resolusi":"720p",
+    "layar_model":"notch",
+    "kapasitas_baterai":"5000",
+    "kamera_jumlah":"quad",
+    "kamera_res_depan":"5",
+    "kamera_res_belakang":"12",
+    "prosesor":"Snapdragon 665",
+    "ranking_prosesor":"",
+    "kapasitas_penyimpanan":"64",
+    "kapasitas_ram":"3",
+    "umur":"<12 bulan",
+    "software":"android 10",
+    "kondisi_fisik":"mulus",
+    "kelengkapan":"fullset",
+    "harga":"1850000",
+    "store_id":"1"
+}
+
+DAFTAR PONSEL - GET
+localhost/pilihape_api/ponsel
+
+DETAIL PONSEL - GET
+localhost/pilihape_api/ponsel/$ID
+
+EDIT PONSEL - PUT
+localhost/pilihape_api/ponsel/$ID
+{
+	"id":"1",
+    "merk_type":"Redmi Note 5 3/32",
+    "layar_ukuran":"6",
+    "layar_resolusi":"1080p",
+    "layar_model":"full view",
+    "kapasitas_baterai":"4000",
+    "kamera_jumlah":"dual",
+    "kamera_res_depan":"5",
+    "kamera_res_belakang":"12",
+    "prosesor":"Snapdragon 636",
+    "ranking_prosesor":"",
+    "kapasitas_penyimpanan":"32",
+    "kapasitas_ram":"3",
+    "umur":">24 bulan",
+    "software":"android 9",
+    "kondisi_fisik":"lecet parah",
+    "kelengkapan":"fullset",
+    "harga":"1350000",
+    "store_id":"1"
+}
+
+HAPUS PONSEL - DELETE
+localhost/pilihape_api/ponsel/$ID
+
+PERHITUNGAN
+localhost/pilihape_api/perhitungan
