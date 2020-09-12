@@ -1,0 +1,7 @@
+RewriteEngine On # Turn on the rewriting engine
+RewriteRule ^ponsel/?$ ponsel.php [NC,L]
+RewriteRule ^ponsel/([0-9]+)$ ponsel.php?id=$1 [L] 
+RewriteRule ^register/?$ register.php [NC,L]
+RewriteRule ^login/?$ login.php [NC,L]
+RewriteRule ^logout/?$ logout.php [NC,L]
+RewriteRule ^perhitungan/?$ perhitungan.php [L] 
