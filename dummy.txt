@@ -1,0 +1,66 @@
+{
+    "merk_type":"Oppo A5 2020 3/64",
+    "layar_ukuran":"6.5",
+    "layar_resolusi":"720p",
+    "layar_model":"notch",
+    "kapasitas_baterai":"4000",
+    "kamera_jumlah":"dual",
+    "kamera_res_depan":"5",
+    "kamera_res_belakang":"12",
+    "prosesor":"Snapdragon 710",
+    "ranking_prosesor":"",
+    "kapasitas_penyimpanan":"64",
+    "kapasitas_ram":"4",
+    "umur":"< 12 bulan",
+    "software":"android 10",
+    "kondisi_fisik":"mulus",
+    "kelengkapan":"fullset",
+    "harga":"1999000"
+}
+
+values
+(
+    'Oppo A5 2020 3/64',
+    '6.5',
+    '720p',
+    'notch',
+    5000,
+    'quad',
+    8,
+    12,
+    'Snapdragon 665',
+    114,
+    '64',
+    '3',
+    '< 12 bulan',
+    'android 10',
+    'lecet ringan',
+    'fullset',
+    1850000
+),
+(
+    'Redmi Note 7 4/64',
+    '6.2',
+    '1080p',
+    'notch',
+    4000,
+    'dual',
+    8,
+    12,
+    'Snapdragon 660',
+    110,
+    '64',
+    '4',
+    '12-24 bulan',
+    'android 10',
+    'lecet ringan',
+    'fullset',
+    1700000
+)
+;
+
+
+kamera_res_depan: 5,8,12,16,21,25,32
+kamera_res_belakang: 8,12,16,21,25,32
+ranking_prosesor: <55, 55-64, 65-89, 90-119, >120
+kapasitas_ram: 2,3,4,6

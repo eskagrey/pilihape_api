@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 session_start();
 if(!isset($_SESSION['user_session']))
 {
@@ -12,6 +13,12 @@ $input_params = json_decode(file_get_contents('php://input'), true);
 if($_SERVER['REQUEST_METHOD'] =='POST')
 {
     $func = new functions;
+    $validation = $func->fc_validation_perhitungan($input_params);
+    if($validation['status'] == false)
+    {
+        echo json_encode($validation);
+        die;
+    }
     $wj = $func->fc_get_wj($input_params);
     $wk = $func->fc_get_wk();
     $utility = $func->fc_get_utility($wk, $wj);

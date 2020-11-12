@@ -12,20 +12,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     try{
         $func = new functions_adm;
         $result = array('msg'=>'gagal login, ');
+        $valid = $func->fc_validation_login($input_params);
         $check_user_or_phone = $func->fc_check_user_or_phone($input_params);
         if($check_user_or_phone == false)
         {
+            header(http_response_code(401));
             $result['msg'] .= "username atau no ponsel tidak terdaftar";
         }
         else
         {
             $check_pass = $func->fc_check_pass($input_params);
-            if($check_pass == false || $check_pass !== base64_encode($input_params['password']))
+            if($check_pass == false || $check_pass['password'] !== $input_params['password'])
             {
+                header(http_response_code(401));
                 $result['msg'] .= "password salah";
             }
             else
             {
+                header("store_id:".$check_pass['store_id']);
                 $session = $input_params['user_or_phone'].date('ddmmyy', time());
                 $upd_session = $func->fc_activate_session($input_params, $session);
                 $result['msg'] = "login berhasil";
