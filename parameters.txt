@@ -20,7 +20,7 @@ LOGOUT - POST
 localhost/pilihape_api/logout
 
 TAMBAH DATA - POST
-localhost/pilihape_api/ponsel
+localhost/pilihape_api/adm/ponsel
 {
     "merk_type":"Oppo A5 2020 3/64",
     "layar_ukuran":"6.5",
@@ -39,17 +39,18 @@ localhost/pilihape_api/ponsel
     "kondisi_fisik":"mulus",
     "kelengkapan":"fullset",
     "harga":"1850000",
-    "store_id":"1"
+    "store_id":"1",
+    "image_url":"http://localhost/pilihape_api/products/20201005200130_1.jpg"
 }
 
-DAFTAR PONSEL - GET
-localhost/pilihape_api/ponsel
+DAFTAR PONSEL (BY STORE_ID) - GET
+localhost/pilihape_api/adm/ponsel
 
-DETAIL PONSEL - GET
-localhost/pilihape_api/ponsel/$ID
+DETAIL PONSEL (BY STORE_ID) - GET
+localhost/pilihape_api/adm/ponsel/$ID
 
 EDIT PONSEL - PUT
-localhost/pilihape_api/ponsel/$ID
+localhost/pilihape_api/adm/ponsel/$ID
 {
 	"id":"1",
     "merk_type":"Redmi Note 5 3/32",
@@ -73,7 +74,30 @@ localhost/pilihape_api/ponsel/$ID
 }
 
 HAPUS PONSEL - DELETE
-localhost/pilihape_api/ponsel/$ID
+localhost/pilihape_api/adm/ponsel/$ID
 
 PERHITUNGAN
 localhost/pilihape_api/perhitungan
+{
+	"layar_ukuran":"2",
+    "layar_resolusi":"2",
+    "layar_model":"3",
+    "kapasitas_baterai":"2",
+    "kamera_jumlah":"1",
+    "kamera_res_depan":"1",
+    "kamera_res_belakang":"1",
+    "ranking_prosesor":"2",
+    "kapasitas_penyimpanan":"2",
+    "kapasitas_ram":"2",
+    "umur":"1",
+    "software":"2",
+    "kondisi_fisik":"2",
+    "kelengkapan":"1",
+    "harga":"1"
+}
+
+DAFTAR PONSEL - GET
+localhost/pilihape_api/ponsel
+
+DETAIL PONSEL - GET
+localhost/pilihape_api/ponsel/$ID

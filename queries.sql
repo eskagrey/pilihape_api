@@ -1,4 +1,3 @@
-create database pilihape;
 
 create user 'admin'@'localhost' identified by 'password';
 grant all on pilihape.* to 'admin'@'localhost';
@@ -7,10 +6,10 @@ use pilihape;
 
 create table tb_seller_agent (
 id int primary key not null auto_increment,
-username varchar(20) notnull,
+username varchar(20) not null,
 phone_no varchar(20) not null,
 password varchar(20) not null,
-sessionv varchar(30),
+session varchar(30),
 store_name varchar(30),
 store_id int(5)
 );
@@ -35,7 +34,9 @@ software varchar(30) not null,
 kondisi_fisik enum('lecet parah','lecet ringan','mulus'),
 kelengkapan enum('hanya unit','unit dan charger','fullset'),
 harga int(10) not null,
-store_id int(5) not null;
+store_id int(5) not null,
+image_url varchar(150)
+);
 
 create table tb_bobot_kriteria (
 id int primary key not null auto_increment,
@@ -56,7 +57,7 @@ software int,
 kondisi_fisik int,
 kelengkapan int,
 harga int not null,
-store_id int(5) not null;
+store_id int(5) not null
 );
 
 create table tb_wk (
