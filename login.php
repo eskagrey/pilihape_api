@@ -11,21 +11,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     try{
         $func = new functions_adm;
-        $result = array('msg'=>'gagal login, ');
+        $result = array();
         $valid = $func->fc_validation_login($input_params);
-        $check_user_or_phone = $func->fc_check_user_or_phone($input_params);
+        $check_user_or_phone = $func->fc_check_user_or_phone($input_params); #echo $check_user_or_phone;die;
         if($check_user_or_phone == false)
         {
-            header(http_response_code(401));
-            $result['msg'] .= "username atau no ponsel tidak terdaftar";
+            header("HTTP/1.0 401 username atau no ponsel tidak terdaftar");
+            // $result['msg'] .= "username atau no ponsel tidak terdaftar";
         }
         else
         {
             $check_pass = $func->fc_check_pass($input_params);
             if($check_pass == false || $check_pass['password'] !== $input_params['password'])
             {
-                header(http_response_code(401));
-                $result['msg'] .= "password salah";
+                header('HTTP/1.0 401 password salah');
+                // $result['msg'] .= "password salah";
             }
             else
             {
@@ -36,12 +36,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                 session_start();
                 $_SESSION['user_session'] = $session;
             }
+            echo json_encode($result);
         }
-        echo json_encode($result);
     }
     catch (Exception $e)
     {
-        echo json_encode($e);
+        header("HTTP/1.0 401 ".$e);
     }
 }
 else

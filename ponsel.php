@@ -23,6 +23,7 @@ $fc_adm = new functions_adm;
             $wk = $func->fc_get_wk_id($id);
             // get store phone no
             $store_phone_no = $fc_adm->fc_get_store_info($data['store_id']);
+            // echo var_dump($store_phone_no);die;
             if($data == false && $bk == false && $wk == false)
             {
                 $result = array("msg"=>"data tidak ditemukan");

@@ -19,7 +19,7 @@ $fc_adm = new functions_adm;
         if($check_session == false)
         {
             header(http_response_code(401));
-            $result['msg'] .= ' sesi tidak valid, silahkan login dulu';
+            $result = array('msg'=>'sesi tidak valid, silahkan login dulu');
         }
         else
         {
@@ -68,10 +68,9 @@ $fc_adm = new functions_adm;
                         $result = $data;
                     }
                 }
-                
             }
-            echo json_encode($result);
         }
+        echo json_encode($result);
     }
 
     // add new data 
