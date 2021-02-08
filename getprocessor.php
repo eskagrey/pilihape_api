@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape_api/functions/fc_ponsel.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape_api/functions/fc_admin.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape/api/functions/fc_ponsel.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape/api/functions/fc_admin.php';
 
 $func = new functions;
 

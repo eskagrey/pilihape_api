@@ -5,7 +5,7 @@ if(!isset($_SESSION['user_session']))
 {
     $_SESSION['user_session'] = 'x';
 }
-require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape_api/functions/fc_ponsel.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape/api/functions/fc_ponsel.php';
 
 $input_params = json_decode(file_get_contents('php://input'), true);
 
@@ -35,6 +35,7 @@ if($_SERVER['REQUEST_METHOD'] =='POST')
         }
         else
         {
+            // echo var_dump($na);die;
             $result = $func->sorting($na);
         }
     }

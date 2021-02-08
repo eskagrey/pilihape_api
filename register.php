@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape_api/functions/fc_admin.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape/api/functions/fc_admin.php';
 
 $input_params = json_decode(file_get_contents('php://input'), true);
 

@@ -2,7 +2,8 @@
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
-require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape_api/functions/fc_admin.php';
+header("Access-Control-Allow-Origin: http://0016d99f0ba3.ngrok.io");
+require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape/api/functions/fc_admin.php';
 
 $input_params = json_decode(file_get_contents('php://input'), true);
 
@@ -29,8 +30,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             }
             else
             {
+                header("store_name:".$check_pass['store_name']);
                 header("store_id:".$check_pass['store_id']);
-                $session = $input_params['user_or_phone'].date('ddmmyy', time());
+                $session = $func->fc_get_store_name($check_pass['store_id']).' - '.date('ddmmyy', time());
                 $upd_session = $func->fc_activate_session($input_params, $session);
                 $result['msg'] = "login berhasil";
                 session_start();

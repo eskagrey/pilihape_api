@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape_api/functions/fc_ponsel.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape_api/functions/fc_admin.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape/api/functions/fc_ponsel.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape/api/functions/fc_admin.php';
 
 $func = new functions;
 $fc_adm = new functions_adm;
@@ -22,7 +22,7 @@ $fc_adm = new functions_adm;
             $bk = $func->fc_get_bk_id($id);
             $wk = $func->fc_get_wk_id($id);
             // get store phone no
-            $store_phone_no = $fc_adm->fc_get_store_info($data['store_id']);
+            $store_phone_no = $fc_adm->fc_get_store_contact($data['store_id']);
             // echo var_dump($store_phone_no);die;
             if($data == false && $bk == false && $wk == false)
             {

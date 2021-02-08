@@ -5,8 +5,8 @@ if(!isset($_SESSION['user_session']))
 {
     $_SESSION['user_session'] = 'x';
 }
-require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape_api/functions/fc_ponsel.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape_api/functions/fc_admin.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape/api/functions/fc_ponsel.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/pilihape/api/functions/fc_admin.php';
 
 $input_params = json_decode(file_get_contents('php://input'), true);
 $func = new functions;
@@ -50,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             fwrite($file, base64_decode($input_params['file_content']));
             fclose($file);
             
-            $result['image_url'] = ($_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME']."/pilihape_api/products/".$filename);
+            $result['image_url'] = ($_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME']."/pilihape/api/products/".$filename);
             
             echo json_encode($result);
             

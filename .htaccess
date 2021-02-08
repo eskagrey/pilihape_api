@@ -1,12 +1,22 @@
 RewriteEngine On # Turn on the rewriting engine
 RewriteRule ^ponsel/?$ ponsel.php [NC,L]
 RewriteRule ^ponsel/([0-9]+)$ ponsel.php?prdctid=$1 [L] 
+
 RewriteRule ^processor/?$ getprocessor.php [NC,L]
+
 RewriteRule ^adm/ponsel/?$ adm_ponsel.php [NC,L]
 RewriteRule ^adm/ponsel/([0-9]+)$ adm_ponsel.php?prdctid=$1 [L] 
 RewriteRule ^adm/ponsel/storeid/([0-9]+)$ adm_ponsel.php?storeid=$1 [L] 
+
 RewriteRule ^register/?$ register.php [NC,L]
 RewriteRule ^login/?$ login.php [NC,L]
 RewriteRule ^logout/?$ logout.php [NC,L]
 RewriteRule ^perhitungan/?$ perhitungan.php [L] 
 RewriteRule ^photo-upload/?$ photo-upload.php [L] 
+
+RewriteRule ^adm/store_id/([0-9]+)$ /adm/get/by_store_id.php?store_id=$1 [L]
+
+RewriteRule ^adm/product/id/([0-9]+)$ /adm/get/by_product_id.php?prdctid_id=$1 [L]
+RewriteRule ^adm/product/add?$ /adm/add.php [L]
+RewriteRule ^adm/product/edit?$ /adm/edit.php [L]
+RewriteRule ^adm/product/delete?$ /adm/delete.php [L]
